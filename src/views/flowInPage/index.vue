@@ -898,12 +898,6 @@ export default {
         0
       )
     ])
-    this.timer = setInterval(() => {
-      this.$refs.flowInGrid.fetchHandler(undefined, true)
-    }, 5000)
-  },
-  beforeDestory() {
-    clearInterval(this.timer)
   },
   async created() {
     this.curColModels = this.colModels.filter(item => item.checked)

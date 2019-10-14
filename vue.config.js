@@ -17,6 +17,7 @@ function resolve(dir) {
   return path.join(__dirname, dir)
 }
 module.exports = {
+  publicPath: process.env.NODE_ENV === 'production' ? './' : '/',
   assetsDir: 'static',
   lintOnSave: true,
   productionSourceMap: false,
@@ -24,8 +25,7 @@ module.exports = {
     host: '0.0.0.0',
     proxy: {
       '/api': {
-        target: 'http://hydrus.thymetai.com',
-        // target: 'http://192.168.50.247:8765',
+        target: 'http://192.168.50.247:8765',
         changeOrigin: true,
         pathRewrite: {
           '^/api': '/api'

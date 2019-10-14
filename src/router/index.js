@@ -9,7 +9,7 @@ import { constantRouterMap } from './routerList'
 Vue.use(Router)
 
 const router = new Router({
-  mode: 'history',
+  mode: 'hash',
   base: process.env.BASE_URL,
   scrollBehavior: () => ({
     y: 0
@@ -51,7 +51,7 @@ router.beforeEach((to, from, next) => {
       next()
     } else {
       next('/login') // 否则全部重定向到登录页
-      // NProgress.done() // 在hash模式下 改变手动改变hash 重定向回来 不会触发afterEach 暂时hack方案 ps：history模式下无问题，可删除该行！
+      NProgress.done() // 在hash模式下 改变手动改变hash 重定向回来 不会触发afterEach 暂时hack方案 ps：history模式下无问题，可删除该行！
     }
   }
 })
