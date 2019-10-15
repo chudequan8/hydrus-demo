@@ -1,11 +1,10 @@
 import fetch from 'utils/fetch'
-import admin from './admin'
 import dashboard from './dashboard'
 import login from './login'
 import flowIn from './flowIn'
 
 const api = {}
-const apiList = [admin, dashboard, login, flowIn]
+const apiList = [dashboard, login, flowIn]
 
 apiList.forEach(menu => {
   generateApi(menu, api)
